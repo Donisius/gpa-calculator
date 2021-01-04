@@ -15,7 +15,7 @@ export class Calculator {
 		this.cummulativeGpa = null;
 	}
 
-	extractGradesFromFile = () => {
+	extractGradesFromFile() {
 		this.clearResults();
 		const selectedFile = document.getElementById("upload").files[0];
 		const fileReader = new FileReader();
@@ -42,7 +42,7 @@ export class Calculator {
 		fileReader.readAsArrayBuffer(selectedFile);
 	}
 
-	getGpa = async () => {
+	async getGpa() {
 		if (!this.parsedResult.length) {
 			return;
 		}
@@ -61,7 +61,7 @@ export class Calculator {
 		document.getElementById("cummulative-gpa").textContent = this.cummulativeGpa.toFixed(2);
 	}
 
-	clearResults = () => {
+	clearResults() {
 		this.parsedResult = [];
 		this.cummulativeGpa = null;
 	}

@@ -12,4 +12,4 @@ export const twelvePointScaleLetterToPoint = {
     "D": 2,
     "D-": 1,
     "F": 0
-};
+}

@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel serve index.html",
+    "build": "parcel build index.html --out-file output.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules dist .cache"
   },
   "repository": {
     "type": "git",
@@ -21,10 +23,10 @@
     "last 1 Chrome version"
   ],
   "devDependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "1.12.4"
   },
   "dependencies": {
-    "pdfjs-dist": "^2.5.207",
-    "regenerator-runtime": "^0.13.7"
+    "pdfjs-dist": "2.5.207",
+    "regenerator-runtime": "0.13.7"
   }
 }
