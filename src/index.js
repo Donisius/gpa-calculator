@@ -6,7 +6,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = require("pdfjs-dist/build/pdf.worker.entry
 
 const gradesRegex = /[0-9]+.[0-9]+.\/[0-9]+.[0-9]+(?:Grade)?(COM|[A-F][+-]?)/g;
 const weightAchievedRegex = /[0-9]+.[0-9]+[^/]+/;
-const weightPossibleRegex = /(?<=\/)[0-9]+.[0-9]+/; // Positive lookbehind may not be supported in all browsers!
+const weightPossibleRegex = /(?<=\/)[0-9]+.[0-9]+/; // NOTE: Positive lookbehind may not be supported in all browsers!
 const letterGradeRegex = /[A-F][+-]?/;
 
 export class Calculator {
@@ -53,7 +53,7 @@ export class Calculator {
 			const weightPossible = weightPossibleRegex.exec(grade)[0];
 			const letterGrade = letterGradeRegex.exec(grade)[0];
 
-			totalWeightPossible += weightPossible * 12;
+			totalWeightPossible += weightPossible * 100;
 			totalWeightAchieved += weightAchieved * twelvePointScaleLetterToPoint[letterGrade];
 		});
 
